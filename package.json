@@ -1,64 +1,17 @@
+
 {
-  "_args": [
-    [
-      {
-        "raw": "/tmp/d-118811-7688-hsjr6q.j6csb81tt9/package.tgz",
-        "scope": null,
-        "escapedName": null,
-        "name": null,
-        "rawSpec": "/tmp/d-118811-7688-hsjr6q.j6csb81tt9/package.tgz",
-        "spec": "/tmp/d-118811-7688-hsjr6q.j6csb81tt9/package.tgz",
-        "type": "local"
-      },
-      "/tmp/apm-install-dir-118811-7688-1019a6i.1gs3jtt9"
-    ]
-  ],
-  "_from": "../d-118811-7688-hsjr6q.j6csb81tt9/package.tgz",
-  "_id": "futhark-language@0.2.0",
-  "_inCache": true,
-  "_location": "/futhark-language",
-  "_phantomChildren": {},
-  "_requested": {
-    "raw": "/tmp/d-118811-7688-hsjr6q.j6csb81tt9/package.tgz",
-    "scope": null,
-    "escapedName": null,
-    "name": null,
-    "rawSpec": "/tmp/d-118811-7688-hsjr6q.j6csb81tt9/package.tgz",
-    "spec": "/tmp/d-118811-7688-hsjr6q.j6csb81tt9/package.tgz",
-    "type": "local"
-  },
-  "_requiredBy": [
-    "#USER"
-  ],
-  "_resolved": "file:../d-118811-7688-hsjr6q.j6csb81tt9/package.tgz",
-  "_shasum": "10fb640399797c6f28045f3abd6b4f55c6f00803",
-  "_shrinkwrap": null,
-  "_spec": "/tmp/d-118811-7688-hsjr6q.j6csb81tt9/package.tgz",
-  "_where": "/tmp/apm-install-dir-118811-7688-1019a6i.1gs3jtt9",
-  "bugs": {
-    "url": "https://laerke_b_pedersen@bitbucket.org/laerke_b_pedersen/futhark-language.git/issues"
-  },
-  "dependencies": {},
+  "name": "futhark-language",
+  "version": "0.0.0",
   "description": "Language support for futhark",
-  "devDependencies": {},
-  "engines": {
-    "atom": ">=1.0.0 <2.0.0"
-  },
-  "homepage": "https://laerke_b_pedersen@bitbucket.org/laerke_b_pedersen/futhark-language.git#readme",
   "keywords": [
     "futhark",
     "futhark-lang",
     "language",
     "grammar"
   ],
+  "repository": "https://github.com/LaerkeDIKU/futhark-language.git",
   "license": "MIT",
-  "name": "futhark-language",
-  "optionalDependencies": {},
-  "readme": "# futhark-language\nAdds syntax highlighting of futhark in Atom. Enjoy :+1:\n\n\n![syntax preview](https://cloud.githubusercontent.com/assets/15815457/22761248/3e9f87e6-ee5a-11e6-95b7-f62dc50ca65a.png)\n",
-  "readmeFilename": "README.md",
-  "repository": {
-    "type": "git",
-    "url": "git+https://laerke_b_pedersen@bitbucket.org/laerke_b_pedersen/futhark-language.git"
-  },
-  "version": "0.1.0"
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
 }
