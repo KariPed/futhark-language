@@ -1,0 +1,92 @@
+# If this is your first time writing a language grammar, check out:
+#   - http://manual.macromates.com/en/language_grammars
+
+'scopeName': 'source.futhark'
+'name': 'futhark'
+'fileTypes': [
+  'fut'
+]
+'patterns': [
+  {
+    'match': '^\\s*--.*$'
+    'name': 'comment'
+  }, {
+    'match': '\\b(bool|float|int|char)\\b'
+    'name': 'constant.numeric.futhark'
+  }, {
+    "include": "#quoted-strings"
+  }, {
+    "include": "#constants"
+  }, {
+    "include": "#keywords"
+  }, {
+    "include": "#operators"
+  }, {
+    "include": "#functions"
+  }, {
+    "include": "#line_comment"
+  }
+]
+
+"repository": {
+  'line_comment': {
+    'comment': 'Single-line comment'
+    'name': 'comment.line.futhark'
+    'begin': '--'
+    'end': '$'
+  },
+  "quoted-strings": {
+    "patterns": [{
+      "comment": "Interpreted string literals",
+      "begin": "\"",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.futhark"
+        }
+      },
+      "end": "\"",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.futhark"
+        }
+      },
+      "name": "string.quoted.double.futhark"
+    }]
+  },
+  "constants": {
+    "patterns": [{
+      "match": "\\b(([0-9]+\\.?[0-9]*)|([0-9]+\\.?[0-9]*)((e|E)(\\+|-)?[0-9]+)?)\\b",
+      "name": "constant.numeric.futhark"
+    }, {
+      "match": "\\b(?<!\\.)(?i)(true|false)(?-i)\\s",
+      "name": "constant.language.futhark"
+    }]
+  },
+  "keywords": {
+    "patterns": [{
+      "match": "\\b(if|then|unsafe|loop|->|else|<\\||in|=>)\\b",
+      "name": "keyword.control.futhark"
+    }, {
+      "match": "\\b(let)\\b",
+      "name": "keyword.control.futhark"
+    }]
+  },
+  "functions": {
+    "patterns": [{
+      "match": "\\b(scan|sgmscan|zip|unzip|map|reduce|iota|replicate|map2|scatter)\\b",
+      "name": "entity.name.function.futhark"
+    }]
+  },
+  "operators": {
+    "patterns": [{
+      "match": "=",
+      "name": "keyword.operator.assignment.futhark"
+    }, {
+      "match": "(==|<=|>=|<|>)",
+      "name": "keyword.operator.comparison.futhark"
+    }, {
+      "match": "(&&|\\|\\|)",
+      "name": "keyword.control.futhark"
+    }]
+  }
+}

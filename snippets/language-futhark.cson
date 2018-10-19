@@ -1,0 +1,56 @@
+# If you want some example snippets, check out:
+# https://github.com/atom/language-gfm/blob/master/snippets/gfm.cson
+
+'.source.futhark':
+  'map':
+    'prefix': 'map'
+    'body': 'map (\\\\${2:i} -> ${3:Lambda-function}) $1'
+    'description': 'map function (foo) onto list elements'
+    'leftLabelHTML':'<span style="color:#bbbbbb">fn </span>'
+    'rightLabelHTML': ''
+  'iota':
+    'prefix': 'iota'
+    'body': 'iota ${1:n}'
+    'description': 'create list [0, 1, ... , n-1]'
+    'leftLabelHTML':'<span style="color:#bbbbbb">fn </span>'
+    'rightLabelHTML': ''
+  'replicate':
+    'prefix': 'replicate'
+    'body': 'replicate ${1:len} ${2:val}'
+    'description': 'create list containing n times val'
+    'leftLabelHTML':'<span style="color:#bbbbbb">fn </span>'
+    'rightLabelHTML': ''
+  'scan':
+    'prefix': 'scan'
+    'body': 'scan (${1:+}) ${2:0} ${3:array}'
+    'leftLabelHTML':'<span style="color:#bbbbbb">fn </span>'
+    'rightLabelHTML': ''
+  'sgmscan':
+    'prefix': 'sgmscan'
+    'body':'scan (\\\\(f1, x1) (f2,x2) ->\n\t
+      let f = f1 | f2 in\n\t
+      if f2 > 0 then (f, x2)\n\t
+      else (f, x1 + x2))\n\t
+      (0,0) (zip ${1:flg} ${2:arr})\n
+      let (_, ${3:res_name}) = unzip ${4:scanned_arr}'
+    'description': 'sgmscan -> (i32, i32)\nreturns zipped, so unzip'
+    'leftLabelHTML':'<span style="color:#bbbbbb">fn </span>'
+    'rightLabelHTML': ''
+  'test':
+    'prefix':'test'
+    'body': 'let test = map(\\\\i -> trace i+0) ${1:to-test-arr}'
+    'description': 'for testing with futharki'
+    'leftLabelHTML':'<span style="color:#bbbbbb">fn </span>'
+    'rightLabelHTML': ''
+  'mkFlag1':
+    'prefix':'mkFlag1'
+    'body':'let shp_sc = scan (+) 0 ${1:mat_shp}\nlet shp_ind = map \\\\i -> unsafe (if i == 0 then 0 else shp_sc[i]) (iota ${2:num_rows})\nlet flag = scatter (replicate ${3:num_elems} 0) shp_ind (replicate ${2:num_rows} 1)'
+    'description':'creates a flag array of ones from the matrix shape'
+    'leftLabelHTML':'<span style="color:#bbbbbb">fn </span>'
+    'rightLabelHTML': ''
+  'mkFlag':
+    'prefix':'mkFlag'
+    'body':'let shp_sc = scan (+) 0 ${1:mat_shp}\nlet shp_ind = map \\\\i -> unsafe (if i == 0 then 0 else shp_sc[i]) (iota ${2:num_rows})\nlet flag = scatter (replicate ${3:num_elems} 0) shp_ind shp_ind'
+    'description':'creates a flag array indicating each rows length from the matrix shape'
+    'leftLabelHTML':'<span style="color:#bbbbbb">fn </span>'
+    'rightLabelHTML': ''
