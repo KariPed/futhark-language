@@ -64,16 +64,16 @@
   },
   "keywords": {
     "patterns": [{
-      "match": "\\b(if|then|unsafe|loop|->|else|<\\||in|=>)\\b",
+      "match": "\\b(if|assert|module|match|case|with|for|while|do|type|then|unsafe|loop|->|else|<\\||in|=>)\\b",
       "name": "keyword.control.futhark"
     }, {
-      "match": "\\b(let)\\b",
+      "match": "\\b(let|entry)\\b",
       "name": "keyword.control.futhark"
     }]
   },
   "functions": {
     "patterns": [{
-      "match": "\\b(scan|sgmscan|zip|unzip|map|reduce|iota|replicate|map2|scatter)\\b",
+      "match": "\\b(flip|curry|uncurry|const|id|iterate|iterate_until|iterate_while|r32|t32|r64|t64|opaque|trace|break|length|null|head|last|tail|init|take|drop|split|split2|reverse|concat|rotate|update|iota|replicate|copy|flatten|flatten_3d|flatten_4d|unflatten|unflatten_3d|unflatten_4d|intersperse|intercalate|transpose|steps|range|and|or|pick|foldl|foldr|tabulate|tabulate_2d|tabulate_3d|map|map1|map2|map3|map4|map5|reduce|reduce_comm|reduce_by_index|scan|filter|partition|partition2|reduce_stream|reduce_stream_per|map_stream|map_stream_per|all|any|scatter|zip|zip2|zip3|zip4|zip5|unzip|unzip2|unzip3|unzip4|unzip5|merge_sort|merge_sort_by_key|radix_sort|radix_sort_by_key|segmented_scan|segmented_reduce|replicated_iota|segmented_iota|expand)\\b",
       "name": "entity.name.function.futhark"
     }]
   },
